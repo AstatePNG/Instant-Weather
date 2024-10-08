@@ -36,7 +36,7 @@ h4 {
     color: #6C2498;
 }
 
-h1{
+h1 {
     font-size: 65px;
 }
 
@@ -55,11 +55,15 @@ h1{
     height: 2em;
 }
 
-.card-body{
+.card-body {
     background-color: rgba(93, 217, 192, 0.60);
 }
 
 .card {
+
+    margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
+    background-image: url("../images/SunPixelArt-320.png");
+
 }
