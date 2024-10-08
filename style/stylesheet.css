@@ -1,0 +1,18 @@
+/* prevent the arrows to be displayed as emoji */
+.fleche{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    margin-top: -8px;
+}
+
+.gauche{
+    color: blue;
+    margin-left: 1em;
+    margin-right: -3px;
+}
+
+.droite{
+    color: red;
+    margin-right: 1em;
+    margin-left: -3px;
+}
