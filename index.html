@@ -11,9 +11,12 @@
         <link rel="stylesheet" href="style/stylesheet.css">
     </head>
     <body>
-        <div>
+        <div class="container">
             <label> Entrez un code postal </label>
             <input name="zipCode" oninput="formInput()" type="text" id="zipCode" class="form-control" minlength="5" maxlength="5">
+            <button id = "launch"> LANCER </button>
+            <label for = "affichage_communes">Liste des communes : </label>
+            <select id = "affichage_communes" name = "communes" ></select>
         </div>
         <div class="card">
             <div class="card-body">
