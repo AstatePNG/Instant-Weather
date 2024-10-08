@@ -3,7 +3,7 @@ let zipCode;
 let affichage = document.getElementById("affichage_communes");
 let button = document.getElementById("launch");
 
-async function rechercheParCodePostal(zipCode) {
+async function searchByZipCode(zipCode) {
     console.log(zipCode);
     try {
         const reponse = await fetch(
@@ -40,6 +40,6 @@ function formInput() {
     zipCode = document.getElementById('zipCode').value;
 
     if(/^([1-9][1-8]){1}([0-9]){3}$/.test(zipCode)){
-        rechercheParCodePostal(zipCode);  //variable containing a valid postal code
+        searchByZipCode(zipCode);  //variable containing a valid postal code
     }
 }
