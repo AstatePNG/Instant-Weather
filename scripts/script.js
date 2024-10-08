@@ -1,13 +1,12 @@
 let zipCode;
 
 let affichage = document.getElementById("affichage_communes");
-let button = document.getElementById("launch");
 let maVille = document.getElementById("maVille");
-let temperature = document.getElementById("temperature");
 let pbPluie = document.getElementById("pbPluie");
 let dureeSoleil = document.getElementById("dureeSoleil");
 let tempMin = document.getElementById("tempMin");
 let tempMax = document.getElementById("tempMax");
+let checkWeather = document.getElementById("checkWeather");
 
 async function searchByZipCode(zipCode) {
     console.log(zipCode);
@@ -35,17 +34,34 @@ async function searchByZipCode(zipCode) {
 
     }
     catch (error){
-        console.error("Erreur requête API : ", error);
+        console.error("Erreur requête API commune : ", error);
         throw error;
     }
 }
 
-
-async function getWeatherInformations() {
-    
-    9cf70dd6f5cf12e723541e9cc253916ca487e80dbfa8f276d3c7074221882677
+async function getWeatherInformations(comCode) {
+    console.log(comCode);
+    try {
+        const repMeteo = await fetch(
+            `https://api.meteo-concept.com/api/forecast/daily/0?token=9cf70dd6f5cf12e723541e9cc253916ca487e80dbfa8f276d3c7074221882677&insee=${comCode}`
+        );
+        const dataMeteo = await repMeteo.json();
+        console.table(dataMeteo);
+        maVille.innerHTML = dataMeteo.city.name;
+        tempMin.innerHTML = dataMeteo.forecast.tmin;
+        tempMax.innerHTML = dataMeteo.forecast.tmax;
+        pbPluie.innerHTML = dataMeteo.forecast.probarain;
+        dureeSoleil.innerHTML = dataMeteo.forecast.sun_hours + " heures";
+    }
+    catch (error) {
+        console.error("Erreur requête API météo : ", error);
+        throw error;
+    }
 }
 
+checkWeather.addEventListener("click", ()=> {
+    getWeatherInformations(affichage.value);
+});
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
