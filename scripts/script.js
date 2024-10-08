@@ -2,6 +2,12 @@ let zipCode;
 let zipCodeInput; //variable containing a valid postal code
 let affichage = document.getElementById("affichage_communes");
 let button = document.getElementById("launch");
+let maVille = document.getElementById("maVille");
+let temperature = document.getElementById("temperature");
+let pbPluie = document.getElementById("pbPluie");
+let dureeSoleil = document.getElementById("dureeSoleil");
+let tempMin = document.getElementById("tempMin");
+let tempMax = document.getElementById("tempMax");
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
@@ -41,4 +47,9 @@ async function rechercheParCodePostal() {
         console.error("Erreur requête API : ", error);
         throw error;
     }
+}
+
+async function getWeatherInformations() {
+    
+    9cf70dd6f5cf12e723541e9cc253916ca487e80dbfa8f276d3c7074221882677
 }
