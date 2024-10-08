@@ -54,3 +54,12 @@ h1{
     width: 2em;
     height: 2em;
 }
+
+.card-body{
+    background-color: rgba(93, 217, 192, 0.60);
+}
+
+.card {
+    margin-left: 15%;
+    margin-right: 15%;
+}
