@@ -1,4 +1,5 @@
 # Instant-Weather
 
 ### Wireframe
-![image](https://github.com/user-attachments/assets/59d1d61c-8098-4fac-8b43-c614e690af00)
+![image](https://github.com/user-attachments/assets/032e79ae-764f-40af-8df0-314bdb247f6c)
+
