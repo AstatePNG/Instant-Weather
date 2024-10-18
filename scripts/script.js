@@ -95,7 +95,7 @@ validFormMenu.addEventListener("click", ()=> {
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
 
-    if(/^([1-9][1-8]){1}([0-9]){3}$/.test(zipCode)){
+    if(/^([0-9][1-8]){1}([0-9]){3}$/.test(zipCode)){
         searchByZipCode(zipCode);  //variable containing a valid postal code
     }
 }
