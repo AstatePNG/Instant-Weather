@@ -4,6 +4,7 @@ body {
     background-color: #acfcd9;
     font-family: "Kalam";
     font-weight: 300;
+    font-size: 20px;
     font-style: normal;
 
     align-items: center;
@@ -29,6 +30,53 @@ body {
     color: red;
     margin-right: 1em;
     margin-left: -3px;
+}
+
+#formMenu {
+    margin-inline: auto;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#openMenu {
+    background-color: transparent;
+    margin-right: 5px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#formMenu {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#cardCheckbox {
+    display: flex; 
+    justify-content: center;  
+    align-items: flex-start; 
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    align-items: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.validFormMenu{
+    margin: 10px;
+    align-items: center;
 }
 
 h1,
@@ -60,63 +108,36 @@ h1 {
 }
 
 .card {
-
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
-    background-image: url("../images/Brouillard.png");
-
+    background-repeat: no-repeat;
 }
 
 .card_snow {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Neige.png");
-
 }
+
 .card_cloud {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Nuage.png");
-
 }
 
 .card_thunder {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Orage.png");
-
 }
 
 .card_rain {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Pluie.png");
-
 }
 
 .card_sun {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Soleil.png");
-
 }
 
 .card_fog {
-
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
     background-image: url("../images/Brouillard.png");
+}
 
+#nextDays {
+    overflow: auto;
 }
