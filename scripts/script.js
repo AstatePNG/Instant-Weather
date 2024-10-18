@@ -15,6 +15,12 @@ let nextDaysContainer = document.getElementById("nextDays");
 let openMenu = document.getElementById("openMenu");
 let validFormMenu = document.getElementById("validFormMenu");
 
+function clearClasses(){ //Remove all the classes to put another one after
+    const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"]
+    let card = document.getElementById("card");
+    card.classList.remove(...classes);
+}
+
 async function searchByZipCode(zipCode) {
     try {
         const reponse = await fetch(
@@ -65,6 +71,26 @@ async function getWeatherInformations(comCode) {
         else{
             dureeSoleil.innerHTML = hours + " heures";
         }
+
+        if(dataMeteo.forecast[0].probarain > 60){//If Rain proba > 60% display rain background
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_rain');
+        } else if(dataMeteo.forecast[0].sun_hours >= 5){//We consider it sunny
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_sun');
+        }else if(dataMeteo.forecast[0].probafog > 10){ // Doesn't seems to work for now...
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_fog');
+        } else { //Cloudy
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_cloud');
+        }
+        card.classList.add("card");
+      
         for(let i=1; i<7; i++){
             addDayCard(dataMeteo.forecast[i].datetime, dataMeteo.forecast[i].tmin, dataMeteo.forecast[i].tmax, dataMeteo.forecast[i].probarain, dataMeteo.forecast[i].sun_hours);
         }
@@ -94,7 +120,6 @@ validFormMenu.addEventListener("click", ()=> {
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
-
     if(/^(0[1-9]|[1-8][0-9]|9[0-8]){1}([0-9]){3}$/.test(zipCode)){
         searchByZipCode(zipCode);  //variable containing a valid postal code
     }

@@ -111,8 +111,31 @@ h1 {
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
-    background-image: url("../images/SunPixelArt-320.png");
     background-repeat: no-repeat;
+}
+
+.card_snow {
+    background-image: url("../images/Neige.png");
+}
+
+.card_cloud {
+    background-image: url("../images/Nuage.png");
+}
+
+.card_thunder {
+    background-image: url("../images/Orage.png");
+}
+
+.card_rain {
+    background-image: url("../images/Pluie.png");
+}
+
+.card_sun {
+    background-image: url("../images/Soleil.png");
+}
+
+.card_fog {
+    background-image: url("../images/Brouillard.png");
 }
 
 #nextDays {
