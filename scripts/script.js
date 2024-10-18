@@ -7,13 +7,6 @@ let dureeSoleil = document.getElementById("dureeSoleil");
 let tempMin = document.getElementById("tempMin");
 let tempMax = document.getElementById("tempMax");
 let checkWeather = document.getElementById("checkWeather");
-//Testing the card's background actualisation
-// let neige = document.getElementById("Neige");
-// let nuage = document.getElementById("Nuage");
-// let orage = document.getElementById("Orage");
-// let pluie = document.getElementById("Pluie");
-// let soleil = document.getElementById("Soleil");
-// let rien = document.getElementById("Rien")
 
 function clearClasses(){ //Remove all the classes to put another one after
     const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"]
@@ -74,7 +67,7 @@ async function getWeatherInformations(comCode) {
             let card = document.getElementById("card");
             clearClasses();
             card.classList.add('card_sun');
-        }else if(dataMeteo.forecast.probafog > 10){
+        }else if(dataMeteo.forecast.probafog > 10){ // Doesn't seems to work for now...
             let card = document.getElementById("card");
             clearClasses();
             card.classList.add('card_fog');
