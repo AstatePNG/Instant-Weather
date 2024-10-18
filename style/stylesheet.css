@@ -52,9 +52,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
 #formMenu {
     display: none;
     margin-left: auto;
@@ -111,13 +108,11 @@ h1 {
 }
 
 .card {
-    
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
     background-image: url("../images/SunPixelArt-320.png");
     background-repeat: no-repeat;
-
 }
 
 #nextDays {
