@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+body {
+    background-color: #acfcd9;
+    font-family: "Kalam";
+    font-weight: 300;
+    font-style: normal;
+
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* prevent the arrows to be displayed as emoji */
 .fleche {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,4 +79,40 @@
 .validFormMenu{
     margin: 10px;
     align-items: center;
+}
+
+h1,
+h4 {
+    color: #6C2498;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+.signature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rollForWeather {
+    margin-bottom: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 2em;
+    height: 2em;
+}
+
+.card-body {
+    background-color: rgba(93, 217, 192, 0.60);
+}
+
+.card {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/SunPixelArt-320.png");
 }
