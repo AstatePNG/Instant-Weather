@@ -114,27 +114,27 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.card_snow {
+.card-snow {
     background-image: url("../images/Neige.png");
 }
 
-.card_cloud {
+.card-cloud {
     background-image: url("../images/Nuage.png");
 }
 
-.card_thunder {
+.card-thunder {
     background-image: url("../images/Orage.png");
 }
 
-.card_rain {
+.card-rain {
     background-image: url("../images/Pluie.png");
 }
 
-.card_sun {
+.card-sun {
     background-image: url("../images/Soleil.png");
 }
 
-.card_fog {
+.card-fog {
     background-image: url("../images/Brouillard.png");
 }
 

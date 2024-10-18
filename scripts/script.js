@@ -1,5 +1,6 @@
 const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 const days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"];
 
 let zipCode;
 
@@ -14,10 +15,9 @@ let checkWeather = document.getElementById("checkWeather");
 let nextDaysContainer = document.getElementById("nextDays");
 let openMenu = document.getElementById("openMenu");
 let validFormMenu = document.getElementById("validFormMenu");
+let card = document.getElementById("card");
 
 function clearClasses(){ //Remove all the classes to put another one after
-    const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"]
-    let card = document.getElementById("card");
     card.classList.remove(...classes);
 }
 
@@ -72,25 +72,17 @@ async function getWeatherInformations(comCode) {
             dureeSoleil.innerHTML = hours + " heures";
         }
 
-        if(dataMeteo.forecast[0].probarain > 60){//If Rain proba > 60% display rain background
-            let card = document.getElementById("card");
-            clearClasses();
-            card.classList.add('card_rain');
+        clearClasses();
+        card.classList.add('card');
+        if(dataMeteo.forecast[0].probarain > 50){//If Rain proba > 60% display rain background
+            card.classList.add('card-rain');
         } else if(dataMeteo.forecast[0].sun_hours >= 5){//We consider it sunny
-            let card = document.getElementById("card");
-            clearClasses();
-            card.classList.add('card_sun');
-        }else if(dataMeteo.forecast[0].probafog > 10){ // Doesn't seems to work for now...
-            let card = document.getElementById("card");
-            clearClasses();
-            card.classList.add('card_fog');
+            card.classList.add('card-sun');
+        }else if(dataMeteo.forecast[0].probafog > 50){ // Doesn't seems to work for now...
+            card.classList.add('card-fog');
         } else { //Cloudy
-            let card = document.getElementById("card");
-            clearClasses();
-            card.classList.add('card_cloud');
+            card.classList.add('card-cloud');
         }
-        card.classList.add("card");
-      
         for(let i=1; i<7; i++){
             addDayCard(dataMeteo.forecast[i].datetime, dataMeteo.forecast[i].tmin, dataMeteo.forecast[i].tmax, dataMeteo.forecast[i].probarain, dataMeteo.forecast[i].sun_hours);
         }
