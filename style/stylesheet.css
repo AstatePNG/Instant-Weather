@@ -4,6 +4,7 @@ body {
     background-color: #acfcd9;
     font-family: "Kalam";
     font-weight: 300;
+    font-size: 20px;
     font-style: normal;
 
     align-items: center;
@@ -60,10 +61,11 @@ h1 {
 }
 
 .card {
-
+    
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
     background-image: url("../images/SunPixelArt-320.png");
+    background-repeat: no-repeat;
 
 }
