@@ -17,27 +17,61 @@
         <h4> by Roll For Weather</h4>
         <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather">
     </div>
-    <div class="container">
-        <label> Entrez un code postal </label>
-        <input name="zipCode" oninput="formInput()" type="text" id="zipCode" class="form-control" minlength="5"
-            maxlength="5">
-        <label for="affichage_communes">Liste des communes : </label>
-        <select id="affichage_communes" name="communes"></select>
-        <button type="button" class="btn btn-dark" id="checkWeather">Valider</button>
-    </div>
-    <div class="card">
-        <div class="card-body ">
-            <p class="card-text d-flex flex-row justify-content-center"><span id="maVille">MA VILLE</span></p>
-            <p class="card-text d-flex flex-row justify-content-center mb-3">(<span id="duree">Aujourd'hui</span>)</p>
-            <p class="card-text d-flex flex-row justify-content-center">Probabilité de pluie : <span class="ms-1"
-                    id="pbPluie">0</span>%</p>
-            <p class="card-text d-flex flex-row justify-content-center">Ensoleillement : <span class="ms-1"
-                    id="dureeSoleil">0h00</span></p>
-            <p class="card-text d-flex flex-row justify-content-center">Températures :</p>
-            <p class="card-text d-flex flex-row justify-content-center"><span id="tempMin">0</span>°C<span
-                    class="fleche"><span class="gauche">⬅</span><span class="droite">➡</span></span><span
-                    id="tempMax">0</span>°C</p>
+    <div id="information">
+        <div class="container">
+            <label> Entrez un code postal </label>
+            <input name="zipCode" oninput="formInput()" type="text" id="zipCode" class="form-control" minlength="5"
+                maxlength="5">
+            <label for="affichage_communes">Liste des communes : </label>
+            <select id="affichage_communes" name="communes"></select>
+            <button type="button" class="btn btn-dark" id="checkWeather">Valider</button>
         </div>
+
+        <div class="card">
+            <div class="buttonCard">
+                <button title="Click to display the additional options menu" type="button" id="openMenu"><i
+                        class="fa-solid fa-gear"></i></button>
+            </div>
+            <div class="card-body">
+                <p class="card-text d-flex flex-row justify-content-center"><span id="maVille">MA VILLE</span></p>
+                <p class="card-text d-flex flex-row justify-content-center mb-3">(<span id="duree">Aujourd'hui</span>)
+                </p>
+                <p class="card-text d-flex flex-row justify-content-center">Probabilité de pluie : <span class="ms-1"
+                        id="pbPluie">0</span>%</p>
+                <p class="card-text d-flex flex-row justify-content-center">Ensoleillement : <span class="ms-1"
+                        id="dureeSoleil">0h00</span></p>
+                <p class="card-text d-flex flex-row justify-content-center">Températures :</p>
+                <p class="card-text d-flex flex-row justify-content-center"><span id="tempMin">0</span>°C<span
+                        class="fleche"><span class="gauche">⬅</span><span class="droite">➡</span></span><span
+                        id="tempMax">0</span>°C</p>
+            </div>
+        </div>
+    </div>
+    <div id="formMenu">
+        <div id="cardCheckbox">
+            <div>
+                <input type="checkbox" id="latitude" name="latitude ">
+                <label for="latitude ">Latitude décimale de la commune</label>
+            </div>
+            <div>
+                <input type="checkbox" id="longitude" name="longitude">
+                <label for="longitude">Longitude décimale de la commune</label>
+            </div>
+            <div>
+                <input type="checkbox" id="TotalRainfall" name="TotalRainfall">
+                <label for="TotalRainfall">Cumul de pluie sur la journée en mm</label>
+            </div>
+            <div>
+                <input type="checkbox" id="AverageWind" name="AverageWind">
+                <label for="AverageWind">Vent moyen à 10 mètres en km/h
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" id="WindDirection" name="WindDirection">
+                <label for="WindDirection">Direction du vent en degrés (0 à 360°)</label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-dark mt-3" id="validFormMenu">Valider</button>
     </div>
     <div class="container d-flex" id="nextDays">
 
