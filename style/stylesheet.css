@@ -13,10 +13,6 @@ body {
     margin-right: auto;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
 /* prevent the arrows to be displayed as emoji */
 .fleche {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
