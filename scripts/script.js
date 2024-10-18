@@ -15,6 +15,13 @@ let nextDaysContainer = document.getElementById("nextDays");
 let openMenu = document.getElementById("openMenu");
 let validFormMenu = document.getElementById("validFormMenu");
 
+let infoLatitude = document.getElementById("infoLatitude");
+let infoLongitude = document.getElementById("infoLongitude");
+let infoTotalRainfall = document.getElementById("infoTotalRainfall");
+let infoAverageWind = document.getElementById("infoAverageWind");
+let infoWindDirection = document.getElementById("infoWindDirection");
+
+
 async function searchByZipCode(zipCode) {
     try {
         const reponse = await fetch(
@@ -87,6 +94,7 @@ openMenu.addEventListener("click", ()=> {
 })
 
 validFormMenu.addEventListener("click", ()=> {
+    isChecked();
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
 
@@ -132,3 +140,17 @@ function addDayCard(date, min, max, proba, sol) {
     meteoDay.appendChild(meteoBody);
     nextDaysContainer.appendChild(meteoDay);
 }
+
+
+function isChecked(){
+    if (document.getElementById("latitude").checked == true) {
+        infoLatitude.style.display = 'flex';
+        window.alert("Hello world!");
+    }
+}
+
+// let infoLatitude = document.getElementById("infoLatitude");
+// let infoLongitude = document.getElementById("infoLongitude");
+// let infoTotalRainfall = document.getElementById("infoTotalRainfall");
+// let infoAverageWind = document.getElementById("infoAverageWind");
+// let infoWindDirection = document.getElementById("infoWindDirection");

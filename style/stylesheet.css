@@ -122,3 +122,8 @@ h1 {
 #nextDays {
     overflow: auto;
 }
+
+
+.test{
+    display: none;
+}
