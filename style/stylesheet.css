@@ -64,6 +64,59 @@ h1 {
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
-    background-image: url("../images/SunPixelArt-320.png");
+    background-image: url("../images/Brouillard.png");
+
+}
+
+.card_snow {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Neige.png");
+
+}
+.card_cloud {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Nuage.png");
+
+}
+
+.card_thunder {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Orage.png");
+
+}
+
+.card_rain {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Pluie.png");
+
+}
+
+.card_sun {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Soleil.png");
+
+}
+
+.card_fog {
+
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("../images/Brouillard.png");
 
 }

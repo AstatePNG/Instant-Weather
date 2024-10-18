@@ -7,6 +7,19 @@ let dureeSoleil = document.getElementById("dureeSoleil");
 let tempMin = document.getElementById("tempMin");
 let tempMax = document.getElementById("tempMax");
 let checkWeather = document.getElementById("checkWeather");
+//Testing the card's background actualisation
+// let neige = document.getElementById("Neige");
+// let nuage = document.getElementById("Nuage");
+// let orage = document.getElementById("Orage");
+// let pluie = document.getElementById("Pluie");
+// let soleil = document.getElementById("Soleil");
+// let rien = document.getElementById("Rien")
+
+function clearClasses(){ //Remove all the classes to put another one after
+    const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"]
+    let card = document.getElementById("card");
+    card.classList.remove(...classes);
+}
 
 async function searchByZipCode(zipCode) {
     console.log(zipCode);
@@ -52,6 +65,25 @@ async function getWeatherInformations(comCode) {
         tempMax.innerHTML = dataMeteo.forecast.tmax;
         pbPluie.innerHTML = dataMeteo.forecast.probarain;
         dureeSoleil.innerHTML = dataMeteo.forecast.sun_hours + " heures";
+
+        if(dataMeteo.forecast.probarain > 60){//If Rain proba > 60% display rain background
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_rain');
+        } else if(dataMeteo.forecast.sun_hours > 2){//We consider it sunny
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_sun');
+        }else if(dataMeteo.forecast.probafog > 10){
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_fog');
+        } else { //Cloudy
+            let card = document.getElementById("card");
+            clearClasses();
+            card.classList.add('card_cloud');
+        }
+        
     }
     catch (error) {
         console.error("Erreur requête API météo : ", error);
