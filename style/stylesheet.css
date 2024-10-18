@@ -69,3 +69,7 @@ h1 {
     background-repeat: no-repeat;
 
 }
+
+#nextDays {
+    overflow: auto;
+}
