@@ -62,6 +62,7 @@
     padding: 20px;
 }
 
-#cardCheckbox.validFormMenu{
+.validFormMenu{
+    margin: 10px;
     align-items: center;
 }
