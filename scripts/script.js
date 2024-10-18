@@ -7,6 +7,10 @@ let dureeSoleil = document.getElementById("dureeSoleil");
 let tempMin = document.getElementById("tempMin");
 let tempMax = document.getElementById("tempMax");
 let checkWeather = document.getElementById("checkWeather");
+let openMenu = document.getElementById("openMenu");
+let validFormMenu = document.getElementById("validFormMenu");
+
+validFormMenu
 
 async function searchByZipCode(zipCode) {
     console.log(zipCode);
@@ -62,6 +66,18 @@ async function getWeatherInformations(comCode) {
 checkWeather.addEventListener("click", ()=> {
     getWeatherInformations(affichage.value);
 });
+
+openMenu.addEventListener("click", ()=> {
+    document.getElementById('formMenu').style.display = 'flex';
+    document.getElementById('information').style.display = 'none';
+
+})
+
+validFormMenu.addEventListener("click", ()=> {
+    document.getElementById('information').style.display = 'inline';
+    document.getElementById('formMenu').style.display = 'none';
+
+})
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
