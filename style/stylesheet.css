@@ -1,17 +1,17 @@
 /* prevent the arrows to be displayed as emoji */
-.fleche{
+.fleche {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 25px;
     margin-top: -8px;
 }
 
-.gauche{
+.gauche {
     color: blue;
     margin-left: 1em;
     margin-right: -3px;
 }
 
-.droite{
+.droite {
     color: red;
     margin-right: 1em;
     margin-left: -3px;
@@ -24,3 +24,44 @@
     flex-direction: column;
 }
 
+
+#openMenu {
+    background-color: transparent;
+    margin-right: 5px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+#formMenu {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#cardCheckbox {
+    display: flex; 
+    justify-content: center;  
+    align-items: flex-start; 
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    align-items: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+#cardCheckbox.validFormMenu{
+    align-items: center;
+}

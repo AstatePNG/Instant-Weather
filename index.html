@@ -11,6 +11,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="style/stylesheet.css">
+
+    <script src="https://kit.fontawesome.com/fb1629470f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,9 +24,13 @@
             <label for="affichage_communes">Liste des communes : </label>
             <select id="affichage_communes" name="communes"></select>
             <button type="button" class="btn btn-dark" id="checkWeather">Valider</button>
-            <button type="button" class="btn btn-dark" id="openMenu">Param</button>
         </div>
+
         <div class="card">
+            <div class="buttonCard">
+                <button title="Click to display the additional options menu" type="button" id="openMenu"><i
+                        class="fa-solid fa-gear"></i></button>
+            </div>
             <div class="card-body">
                 <p class="card-text d-flex flex-row justify-content-center"><span id="maVille">MA VILLE</span></p>
                 <p class="card-text d-flex flex-row justify-content-center mb-3">(<span id="duree">Aujourd'hui</span>)
@@ -41,23 +47,31 @@
         </div>
     </div>
     <div id="formMenu">
-        <div>
-            <input type="checkbox" id="minTemperature" name="minTemperature">
-            <label for="minTemperature">Température minimale</label>
-        </div>
-        <div>
-            <input type="checkbox" id="maxTemperature" name="maxTemperature">
-            <label for="maxTemperature">Température maximal</label>
-        </div>
-        <div>
-            <input type="checkbox" id="rainProbability" name="rainProbability">
-            <label for="rainProbability">Probabilité de pluie</label>
-        </div>
-        <div>
-            <input type="checkbox" id="sunshineHour" name="sunshineHour">
-            <label for="sunshineHour">Nombre heure ensoleillement</label>
+        <h1>Instant Weather</h1>
+        <div class="signature">
+            <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather" />
+            <h4> by Roll For Weather</h4>
+            <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather" />
         </div>
 
+        <div id="cardCheckbox">
+            <div>
+                <input type="checkbox" id="minTemperature" name="minTemperature">
+                <label for="minTemperature">Température minimale</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maxTemperature" name="maxTemperature">
+                <label for="maxTemperature">Température maximal</label>
+            </div>
+            <div>
+                <input type="checkbox" id="rainProbability" name="rainProbability">
+                <label for="rainProbability">Probabilité de pluie</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sunshineHour" name="sunshineHour">
+                <label for="sunshineHour">Nombre heure ensoleillement</label>
+            </div>
+        </div>
         <button type="button" class="btn btn-dark" id="validFormMenu">Valider</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
