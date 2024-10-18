@@ -70,7 +70,7 @@ async function getWeatherInformations(comCode) {
             let card = document.getElementById("card");
             clearClasses();
             card.classList.add('card_rain');
-        } else if(dataMeteo.forecast.sun_hours > 2){//We consider it sunny
+        } else if(dataMeteo.forecast.sun_hours >= 5){//We consider it sunny
             let card = document.getElementById("card");
             clearClasses();
             card.classList.add('card_sun');
@@ -98,7 +98,7 @@ checkWeather.addEventListener("click", ()=> {
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
 
-    if(/^([1-9][1-8]){1}([0-9]){3}$/.test(zipCode)){
+    if(/^([0-9][1-8]){1}([0-9]){3}$/.test(zipCode)){
         searchByZipCode(zipCode);  //variable containing a valid postal code
     }
 }
