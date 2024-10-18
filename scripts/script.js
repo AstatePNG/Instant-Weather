@@ -17,7 +17,7 @@ let openMenu = document.getElementById("openMenu");
 let validFormMenu = document.getElementById("validFormMenu");
 let card = document.getElementById("card");
 
-function clearClasses(){ //Remove all the classes to put another one after
+function clearCardClasses(){ //Remove all the classes to put another one after
     card.classList.remove(...classes);
 }
 
@@ -72,7 +72,7 @@ async function getWeatherInformations(comCode) {
             dureeSoleil.innerHTML = hours + " heures";
         }
 
-        clearClasses();
+        clearCardClasses();
         card.classList.add('card');
         if(dataMeteo.forecast[0].probarain > 50){//If Rain proba > 60% display rain background
             card.classList.add('card-rain');
