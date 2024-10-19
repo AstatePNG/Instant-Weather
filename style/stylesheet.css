@@ -141,3 +141,8 @@ h1 {
 #nextDays {
     overflow: auto;
 }
+
+
+.hiddenInfo{
+    display: none !important;
+}

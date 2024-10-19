@@ -21,6 +21,13 @@ function clearCardClasses(){ //Remove all the classes to put another one after
     card.classList.remove(...classes);
 }
 
+let infoLatitude = document.getElementById("infoLatitude");
+let infoLongitude = document.getElementById("infoLongitude");
+let infoTotalRainfall = document.getElementById("infoTotalRainfall");
+let infoAverageWind = document.getElementById("infoAverageWind");
+let infoWindDirection = document.getElementById("infoWindDirection");
+
+
 async function searchByZipCode(zipCode) {
     try {
         const reponse = await fetch(
@@ -51,6 +58,8 @@ async function searchByZipCode(zipCode) {
     }
 }
 
+
+
 async function getWeatherInformations(comCode) {
     try {
         const repMeteo = await fetch(
@@ -64,6 +73,13 @@ async function getWeatherInformations(comCode) {
         tempMin.innerHTML = dataMeteo.forecast[0].tmin;
         tempMax.innerHTML = dataMeteo.forecast[0].tmax;
         pbPluie.innerHTML = dataMeteo.forecast[0].probarain;
+
+        infoLatitude.innerHTML = dataMeteo.forecast[0].latitude;
+        infoLongitude.innerHTML = dataMeteo.forecast[0].longitude;
+        infoTotalRainfall.innerHTML = dataMeteo.forecast[0].rr10 + 'mm';
+        infoAverageWind.innerHTML = dataMeteo.forecast[0].wind10m + ' km/h';
+        infoWindDirection.innerHTML = dataMeteo.forecast[0].dirwind10m + '°';
+
         let hours = dataMeteo.forecast[0].sun_hours;
         if(hours == 1){
             dureeSoleil.innerHTML = hours + " heure";
@@ -102,13 +118,30 @@ openMenu.addEventListener("click", ()=> {
     document.getElementById('formMenu').style.display = 'flex';
     document.getElementById('information').style.display = 'none';
 
-})
+});
 
 validFormMenu.addEventListener("click", ()=> {
+    isChecked("latitude", infoLatitude, "infoLatitudeText");
+    isChecked("longitude", infoLongitude, "infoLongitudeText");
+    isChecked("totalRainfall", infoTotalRainfall, "infoTotalRainfallText");
+    isChecked("averageWind", infoAverageWind, "infoAverageWindText");
+    isChecked("windDirection", infoWindDirection, "infoWindDirectionText");
+
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
 
-})
+});
+
+function isChecked(elementId, infoElement, infoTextElement) {
+    if (document.getElementById(elementId).checked == false) {
+        document.getElementById(infoTextElement).classList.add("hiddenInfo");
+    }
+    else{
+        document.getElementById(infoTextElement).classList.remove("hiddenInfo");
+    }
+}
+
+
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
@@ -149,3 +182,8 @@ function addDayCard(date, min, max, proba, sol) {
     meteoDay.appendChild(meteoBody);
     nextDaysContainer.appendChild(meteoDay);
 }
+
+
+
+
+
