@@ -91,14 +91,29 @@ openMenu.addEventListener("click", ()=> {
     document.getElementById('formMenu').style.display = 'flex';
     document.getElementById('information').style.display = 'none';
 
-})
+});
 
 validFormMenu.addEventListener("click", ()=> {
-    isChecked();
+    isChecked("latitude", infoLatitude, "infoLatitudeText");
+    isChecked("longitude", infoLongitude, "infoLongitudeText");
+    isChecked("totalRainfall", infoTotalRainfall, "infoTotalRainfallText");
+    isChecked("averageWind", infoAverageWind, "infoAverageWindText");
+    isChecked("windDirection", infoWindDirection, "infoWindDirectionText");
+
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
 
-})
+});
+
+function isChecked(elementId, infoElement, infoTextElement) {
+    if (document.getElementById(elementId).checked == false) {
+        document.getElementById(infoTextElement).classList.add("hiddenInfo");
+    }
+    else{
+        document.getElementById(infoTextElement).classList.remove("hiddenInfo");
+    }
+}
+
 
 function formInput() {
     zipCode = document.getElementById('zipCode').value;
@@ -142,15 +157,6 @@ function addDayCard(date, min, max, proba, sol) {
 }
 
 
-function isChecked(){
-    if (document.getElementById("latitude").checked == true) {
-        infoLatitude.style.display = 'flex';
-        window.alert("Hello world!");
-    }
-}
 
-// let infoLatitude = document.getElementById("infoLatitude");
-// let infoLongitude = document.getElementById("infoLongitude");
-// let infoTotalRainfall = document.getElementById("infoTotalRainfall");
-// let infoAverageWind = document.getElementById("infoAverageWind");
-// let infoWindDirection = document.getElementById("infoWindDirection");
+
+

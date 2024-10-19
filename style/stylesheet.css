@@ -124,6 +124,6 @@ h1 {
 }
 
 
-.test{
-    display: none;
+.hiddenInfo{
+    display: none !important;
 }

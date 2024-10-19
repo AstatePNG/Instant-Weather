@@ -50,16 +50,26 @@
 
                 <div id="additionalInfo">
 
-                    <p class="test" class="card-text d-flex flex-row justify-content-center">Latitude : <span class="ms-1"
-                            id="infoLatitude">k</span></p>
-                    <p class="card-text d-flex flex-row justify-content-center">Latitude : <span class="ms-1"
-                            id="infoLongitude">a</span></p>
-                    <p class="card-text d-flex flex-row justify-content-center">Total pluie : <span class="ms-1"
-                            id="infoTotalRainfall">k</span></p>
-                    <p class="card-text d-flex flex-row justify-content-center">Vent : <span class="ms-1"
-                            id="infoAverageWind">o</span></p>
-                    <p class="card-text d-flex flex-row justify-content-center">Direction du vent : <span class="ms-1"
-                            id="infoWindDirection">u</span></p>
+                    <p class="hiddenInfo" id="infoLatitudeText"
+                        class="card-text d-flex flex-row justify-content-center">L'atitude :
+                        <span class="ms-1" id="infoLatitude">k</span>
+                    </p>
+                    <p class="hiddenInfo" id="infoLongitudeText"
+                        class="card-text d-flex flex-row justify-content-center">L'ongitude :
+                        <span class="ms-1" id="infoLongitude">a</span>
+                    </p>
+                    <p class="hiddenInfo" id="infoTotalRainfallText"
+                        class="card-text d-flex flex-row justify-content-center">Total pluie :
+                        <span class="ms-1" id="infoTotalRainfall">k</span>
+                    </p>
+                    <p class="hiddenInfo" id="infoAverageWindText"
+                        class="card-text d-flex flex-row justify-content-center">Vent : 
+                        <span class="ms-1" id="infoAverageWind">o</span>
+                    </p>
+                    <p class="hiddenInfo" id="infoWindDirectionText"
+                        class="card-text d-flex flex-row justify-content-center">Direction du vent : 
+                        <span class="ms-1" id="infoWindDirection">u</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -75,16 +85,16 @@
                 <label for="longitude">Longitude décimale de la commune</label>
             </div>
             <div>
-                <input type="checkbox" id="TotalRainfall" name="TotalRainfall">
+                <input type="checkbox" id="totalRainfall" name="totalRainfall">
                 <label for="totalRainfall">Cumul de pluie sur la journée en mm</label>
             </div>
             <div>
-                <input type="checkbox" id="AverageWind" name="AverageWind">
+                <input type="checkbox" id="averageWind" name="averageWind">
                 <label for="averageWind">Vent moyen à 10 mètres en km/h
                 </label>
             </div>
             <div>
-                <input type="checkbox" id="WindDirection" name="WindDirection">
+                <input type="checkbox" id="windDirection" name="windDirection">
                 <label for="windDirection">Direction du vent en degrés (0 à 360°)</label>
             </div>
         </div>
