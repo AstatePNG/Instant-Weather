@@ -52,6 +52,8 @@ async function searchByZipCode(zipCode) {
     }
 }
 
+
+
 async function getWeatherInformations(comCode) {
     try {
         const repMeteo = await fetch(
@@ -65,6 +67,13 @@ async function getWeatherInformations(comCode) {
         tempMin.innerHTML = dataMeteo.forecast[0].tmin;
         tempMax.innerHTML = dataMeteo.forecast[0].tmax;
         pbPluie.innerHTML = dataMeteo.forecast[0].probarain;
+
+        infoLatitude.innerHTML = dataMeteo.forecast[0].latitude;
+        infoLongitude.innerHTML = dataMeteo.forecast[0].longitude;
+        infoTotalRainfall.innerHTML = dataMeteo.forecast[0].rr10 + 'mm';
+        infoAverageWind.innerHTML = dataMeteo.forecast[0].wind10m + ' km/h';
+        infoWindDirection.innerHTML = dataMeteo.forecast[0].dirwind10m + '°';
+
         let hours = dataMeteo.forecast[0].sun_hours;
         if(hours == 1){
             dureeSoleil.innerHTML = hours + " heure";
@@ -113,6 +122,7 @@ function isChecked(elementId, infoElement, infoTextElement) {
         document.getElementById(infoTextElement).classList.remove("hiddenInfo");
     }
 }
+
 
 
 function formInput() {
