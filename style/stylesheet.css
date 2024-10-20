@@ -114,27 +114,33 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.card-snow {
+.card-snow { /*Needs to be even more to the left, contrast is not terrible*/
     background-image: url("../images/Neige.png");
+    background-position: left;
 }
 
-.card-cloud {
-    background-image: url("../images/Nuage.png");
+.card-cloud { /*Looks good*/
+    background-image: url("../images/cloud.gif");
+    background-size: cover;
 }
 
-.card-thunder {
-    background-image: url("../images/Orage.png");
+.card-thunder { /*Looks good*/
+    background-image: url("../images/thunder.gif");
+    background-repeat: repeat;
+    background-position: center;
 }
 
-.card-rain {
-    background-image: url("../images/Pluie.png");
+.card-rain { /*Pic Needs a bit of margin left, but how...*/
+    background-image: url("../images/Brouillard.png");
+    background-position: left;
 }
 
-.card-sun {
-    background-image: url("../images/Soleil.png");
+.card-sun { /*Pic Needs a bit of margin left, but how...*/
+    background-image: url("../images/sun2.gif");
+    background-position: left;
 }
 
-.card-fog {
+.card-fog { /*Needs a new Pic*/
     background-image: url("../images/Brouillard.png");
 }
 
