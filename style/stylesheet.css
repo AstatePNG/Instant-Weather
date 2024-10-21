@@ -117,6 +117,7 @@ h1 {
 .card-snow { /*Needs to be even more to the left, contrast is not terrible*/
     background-image: url("../images/Neige.png");
     background-position: left;
+    background-size: contain;
 }
 
 .card-cloud { /*Looks good*/
@@ -130,8 +131,8 @@ h1 {
     background-position: center;
 }
 
-.card-rain { /*Pic Needs a bit of margin left, but how...*/
-    background-image: url("../images/Pluie.png");
+.card-rain { /*Looks good*/
+    background-image: url("../images/Brouillard.png");
     background-position: left;
 }
 
