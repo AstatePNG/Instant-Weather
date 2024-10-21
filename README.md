@@ -1,7 +1,7 @@
 # Instant-Weather
 
 ## Description
-This is a project, done by HAMON Elsa, MEKHELEF Louisa and RAGOT Alexis, for classes during the year 2024-2025. The project implements a **web weather application**, allowing a user on a mobile or computer to search, using the postcode of his city, the weather information of the day, as well as the forecast for the next 7 days if desired.
+This is a project, done by HAMON Elsa, MEKHELEF Louisa and RAGOT Alexis, for classes during the year 2024-2025. The project implements a **web weather application**. It allows a user on a mobile or computer to search, using the postcode of his city, the forecast of the day, as well as the forecast for the next 7 days if desired.
 
 ## Functionalities 
 
