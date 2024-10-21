@@ -90,15 +90,36 @@ async function getWeatherInformations(comCode) {
 
         clearCardClasses();
         card.classList.add('card');
-        if(dataMeteo.forecast[0].probarain > 50){//If Rain proba > 60% display rain background
+        if((10 <= dataMeteo.forecast[0].weather <= 16) ||
+            (40 <= dataMeteo.forecast[0].weather <= 47) ||
+            (210 <= dataMeteo.forecast[0].weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
+        {
             card.classList.add('card-rain');
-        } else if(dataMeteo.forecast[0].sun_hours >= 5){//We consider it sunny
+        } 
+
+        else if(0 <= dataMeteo.forecast[0].weather <= 2){//The only codes where we consider it sunny
             card.classList.add('card-sun');
-        }else if(dataMeteo.forecast[0].probafog > 50){ // Doesn't seems to work for now...
-            card.classList.add('card-fog');
-        } else { //Cloudy
-            card.classList.add('card-cloud');
         }
+
+        else if(6 <= dataMeteo.forecast[0].weather <= 7){ // Codes for Fog
+            card.classList.add('card-fog');
+        } 
+
+        else if(3 <= dataMeteo.forecast[0].weather <= 4){ //Codes for cloud
+            card.classList.add('card-cloud');
+        } 
+
+        else if((20 <= dataMeteo.forecast[0].weather <= 22) ||
+                (30 <= dataMeteo.forecast[0].weather <= 32) ||
+                (60 <= dataMeteo.forecast[0].weather <= 68)) //Codes for snow (exlcuding those who mix snow and rain)
+        { 
+            card.classList.add('card-snow');
+        } 
+        
+        else if((100 <= dataMeteo.forecast[0].weather <= 142)){ //Codes for Thunder
+            card.classList.add('card-thunder');
+        } 
+        
         for(let i=1; i<7; i++){
             addDayCard(dataMeteo.forecast[i].datetime, dataMeteo.forecast[i].tmin, dataMeteo.forecast[i].tmax, dataMeteo.forecast[i].probarain, dataMeteo.forecast[i].sun_hours);
         }
