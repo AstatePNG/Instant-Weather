@@ -69,7 +69,6 @@ body {
     flex-direction: column;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
-    align-items: left;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
 }
