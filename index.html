@@ -30,21 +30,21 @@
             <button type="button" class="btn btn-dark" id="checkWeather">Valider</button>
         </div>
 
-        <div class="card" id="card">
-            <div class="buttonCard">
-                <button title="Click to display the additional options menu" type="button" id="openMenu"><i
-                        class="bi bi-gear-fill"></i></button>
-            </div>
+        <div class="buttonCard">
+            <button title="Click to display the additional options menu" type="button" id="openMenu"><i class="bi bi-gear-fill"></i></button>
+        </div>
+        
+        <div class="card text-center" id="card">
             <div class="card-body">
-                <p class="card-text d-flex flex-row justify-content-center"><span id="maVille">MA VILLE</span></p>
-                <p class="card-text d-flex flex-row justify-content-center mb-3">(<span id="duree">Aujourd'hui</span>)
+                <p class="card-text"><span id="maVille">MA VILLE</span></p>
+                <p class="card-text">(<span id="duree">Aujourd'hui</span>)
                 </p>
-                <p class="card-text d-flex flex-row justify-content-center">Probabilité de pluie : <span class="ms-1"
+                <p class="card-text">Probabilité de pluie : <span class="ms-1"
                         id="pbPluie">0</span>%</p>
-                <p class="card-text d-flex flex-row justify-content-center">Ensoleillement : <span class="ms-1"
+                <p class="card-text">Ensoleillement : <span class="ms-1"
                         id="dureeSoleil">0h00</span></p>
-                <p class="card-text d-flex flex-row justify-content-center">Températures :</p>
-                <p class="card-text d-flex flex-row justify-content-center"><span id="tempMin">0</span>°C<span
+                <p class="card-text">Températures :</p>
+                <p class="card-text"><span id="tempMin">0</span>°C<span
                         class="fleche"><span class="gauche">⬅</span><span class="droite">➡</span></span><span
                         id="tempMax">0</span>°C</p>
 
@@ -71,6 +71,8 @@
     </div>
     <div id="formMenu">
         <div id="cardCheckbox">
+            <label for="duration" class="form-label">Prévision pour <span id="durationValueDisplay">aujourd'hui</span></label>
+            <input type="range" class="form-range" min="1" max="7" id="duration" value="1">
             <div>
                 <input type="checkbox" id="latitude" name="latitude">
                 <label for="latitude">Latitude décimale de la commune</label>
@@ -95,8 +97,11 @@
         </div>
         <button type="button" class="btn btn-dark mt-3" id="validFormMenu">Valider</button>
     </div>
-    <div class="container d-flex" id="nextDays">
+    
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3" id="nextDays">
 
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

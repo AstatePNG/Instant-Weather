@@ -139,6 +139,8 @@ h1 {
 
 #nextDays {
     overflow: auto;
+    margin: 0px;
+    padding: 0px;
 }
 
 
