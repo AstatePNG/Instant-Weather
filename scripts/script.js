@@ -1,6 +1,6 @@
 const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 const days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-const classes =  ["card_snow", "card_rain", "card_sun", "card_thunder", "card_cloud", "card_fog"];
+const classes =  ["card-snow", "card-rain", "card-sun", "card-thunder", "card-cloud", "card-fog"];
 
 let zipCode;
 
@@ -89,34 +89,35 @@ async function getWeatherInformations(comCode) {
         }
 
         clearCardClasses();
+        console.log(dataMeteo.forecast[0].weather);
         card.classList.add('card');
-        if((10 <= dataMeteo.forecast[0].weather <= 16) ||
-            (40 <= dataMeteo.forecast[0].weather <= 47) ||
-            (210 <= dataMeteo.forecast[0].weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
+        if((10 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 16) ||
+            (40 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 47) ||
+            (210 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
         {
             card.classList.add('card-rain');
         } 
 
-        else if(0 <= dataMeteo.forecast[0].weather <= 2){//The only codes where we consider it sunny
+        else if(0 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 2){//The only codes where we consider it sunny
             card.classList.add('card-sun');
         }
 
-        else if(6 <= dataMeteo.forecast[0].weather <= 7){ // Codes for Fog
+        else if(6 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 7){ // Codes for Fog
             card.classList.add('card-fog');
         } 
 
-        else if(3 <= dataMeteo.forecast[0].weather <= 4){ //Codes for cloud
+        else if(3 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 4){ //Codes for cloud
             card.classList.add('card-cloud');
         } 
 
-        else if((20 <= dataMeteo.forecast[0].weather <= 22) ||
-                (30 <= dataMeteo.forecast[0].weather <= 32) ||
-                (60 <= dataMeteo.forecast[0].weather <= 68)) //Codes for snow (exlcuding those who mix snow and rain)
+        else if((20 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 22) ||
+                (30 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 32) ||
+                (60 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 68)) //Codes for snow (exlcuding those who mix snow and rain)
         { 
             card.classList.add('card-snow');
         } 
         
-        else if((100 <= dataMeteo.forecast[0].weather <= 142)){ //Codes for Thunder
+        else if((100 <= dataMeteo.forecast[0].weather && dataMeteo.forecast[0].weather <= 142)){ //Codes for Thunder
             card.classList.add('card-thunder');
         } 
         
