@@ -1,5 +1,34 @@
 # Instant-Weather
 
-### Wireframe
+## Description
+This is a project, done by HAMON Elsa, MEKHELEF Louisa and RAGOT Alexis, for classes during the year 2024-2025. The project implements a **web weather application**. It allows a user on a mobile or computer to search, using the postcode of his city, the forecast of the day, as well as the forecast for the next 7 days if desired.
+
+## Functionalities 
+
+- **Additional information** : The user can choose to display up to 5 additional items of information.
+- **Up to 7 days** : Users can display weather forecasts for up to 7 days.
+- **Choose a town** : Users can choose a town by ZIP code (mainland and overseas France).
+- **Design** : Easy-to-use, user-friendly interface, giving the user access to a wide range of information.
+
+## Use
+
+1. **Go to the website:**
+   - Open the file `index.html` in a browser to launch the weather site or by clicking on [this link](https://astatepng.github.io/Instant-Weather/)
+  
+3. **Choose a city:**
+   - Enter a postcode in the form below the title ✏️. There's no need to validate, because when you enter a valid ZIP code, the search for towns with that ZIP code is carried out automatically.
+   - When you enter a valid postcode, a list of towns with that postcode is displayed. All you have to do is choose the town you want, then press the ‘Valider’ button ✅.
+     
+4. **Configuration**
+   - By clicking on the gear ⚙️, the user can choose to display up to 5 additional pieces of information !
+   - Users can choose to display forecasts up to 7 days ahead ☀️.
+
+## Wireframe
 ![image](https://github.com/user-attachments/assets/032e79ae-764f-40af-8df0-314bdb247f6c)
+
+## Screenshot
+![image](https://github.com/user-attachments/assets/2bf861b3-3598-4d7b-9ce6-91edbb7cdeb5)
+![image](https://github.com/user-attachments/assets/ad5969da-6795-4eab-9421-c7d1c20734d4)
+
+
 

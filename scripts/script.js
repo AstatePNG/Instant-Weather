@@ -17,8 +17,13 @@ let validFormMenu = document.getElementById("validFormMenu");
 let card = document.getElementById("card");
 let slider = document.getElementById("duration");
 let sliderValueDisplay = document.getElementById("durationValueDisplay");
+let infoLatitude = document.getElementById("infoLatitude");
+let infoLongitude = document.getElementById("infoLongitude");
+let infoTotalRainfall = document.getElementById("infoTotalRainfall");
+let infoAverageWind = document.getElementById("infoAverageWind");
+let infoWindDirection = document.getElementById("infoWindDirection");
 
-// Remove all the classes to put another one after
+// Remove all the card's classes
 function clearCardClasses(cardToClear){ 
     cardToClear.classList.remove(...classes);
 }
@@ -67,6 +72,13 @@ async function getWeatherInformations(comCode) {
         tempMin.innerHTML = dataMeteo.forecast[0].tmin;
         tempMax.innerHTML = dataMeteo.forecast[0].tmax;
         pbPluie.innerHTML = dataMeteo.forecast[0].probarain;
+
+        infoLatitude.innerHTML = dataMeteo.forecast[0].latitude;
+        infoLongitude.innerHTML = dataMeteo.forecast[0].longitude;
+        infoTotalRainfall.innerHTML = dataMeteo.forecast[0].rr10 + 'mm';
+        infoAverageWind.innerHTML = dataMeteo.forecast[0].wind10m + ' km/h';
+        infoWindDirection.innerHTML = dataMeteo.forecast[0].dirwind10m + '°';
+
         let hours = dataMeteo.forecast[0].sun_hours;
         if(hours == 1){
             dureeSoleil.innerHTML = hours + " heure";
@@ -96,13 +108,19 @@ checkWeather.addEventListener("click", ()=> {
 openMenu.addEventListener("click", ()=> {
     document.getElementById('formMenu').style.display = 'flex';
     document.getElementById('information').style.display = 'none';
-})
+});
 
 // Valid the settings on click
 validFormMenu.addEventListener("click", ()=> {
+    isChecked("latitude", infoLatitude, "infoLatitudeText");
+    isChecked("longitude", infoLongitude, "infoLongitudeText");
+    isChecked("totalRainfall", infoTotalRainfall, "infoTotalRainfallText");
+    isChecked("averageWind", infoAverageWind, "infoAverageWindText");
+    isChecked("windDirection", infoWindDirection, "infoWindDirectionText");
+
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
-})
+});
 
 // Update the display above the slider to make it match the current value set
 slider.addEventListener("input", ()=> {
@@ -112,7 +130,16 @@ slider.addEventListener("input", ()=> {
     else{
         sliderValueDisplay.innerHTML = "pour les " + slider.value + " prochains jours";
     }
-})
+});
+
+function isChecked(elementId, infoElement, infoTextElement) {
+    if (document.getElementById(elementId).checked == false) {
+        document.getElementById(infoTextElement).classList.add("hiddenInfo");
+    }
+    else{
+        document.getElementById(infoTextElement).classList.remove("hiddenInfo");
+    }
+}
 
 // Call the function for the commune code when a valid Zip code is detected
 function formInput() {
