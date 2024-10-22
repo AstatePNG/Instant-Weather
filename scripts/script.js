@@ -196,6 +196,7 @@ function setVisualOfWeather(cardToUpdate, weather) {
     cardToUpdate.classList.add('card');
     if((10 <= weather && weather <= 16) ||
         (40 <= weather && weather <= 47) ||
+        (70 <= weather && weather <= 76) ||
         (210 <= weather && weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
     {
         cardToUpdate.classList.add('card-rain');
@@ -220,7 +221,7 @@ function setVisualOfWeather(cardToUpdate, weather) {
         cardToUpdate.classList.add('card-snow');
     } 
 
-    else if((100 <= weather && weather <= 142)){ //Codes for Thunder
+    else if((100 <= weather && weather <= 142) || (weather == 141)){ //Codes for Thunder
         cardToUpdate.classList.add('card-thunder');
     } 
 }
