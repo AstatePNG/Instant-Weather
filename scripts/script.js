@@ -123,6 +123,7 @@ validFormMenu.addEventListener("click", ()=> {
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
 
+
     getWeatherInformations(affichage.value);
     nextDaysContainer.innerHTML = '';
 });
