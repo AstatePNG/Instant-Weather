@@ -22,15 +22,45 @@ let infoLongitude = document.getElementById("infoLongitude");
 let infoTotalRainfall = document.getElementById("infoTotalRainfall");
 let infoAverageWind = document.getElementById("infoAverageWind");
 let infoWindDirection = document.getElementById("infoWindDirection");
+let accueil = document.getElementById("accueil");
+let weatherInformations = document.getElementById("weatherInformations");
+let changeWeather = document.getElementById("changeWeather");
+let firstInput = document.getElementById("firstInput");
+
+let choosenCity;
 
 // Remove all the card's classes
 function clearCardClasses(cardToClear){ 
     cardToClear.classList.remove(...classes);
 }
 
+function hideAndClearForm() {
+    zipCode.value = "";
+    affichage.value = "";
+    affichage.innerHTML = "";
+    firstInput.classList.add("hidden");
+    affichage.classList.add("hidden");
+    checkWeather.classList.add("hidden");
+    accueil.classList.add("hidden");
+}
+
+function hideWeather() {
+    weatherInformations.classList.add("hidden");
+}
+
+function displayForm() {
+    accueil.classList.remove("hidden");
+    firstInput.classList.remove("hidden");
+}
+
+function displayWeather() {
+    weatherInformations.classList.remove("hidden");
+}
+
 // Call of the API to get commune code with ZIP code
 async function searchByZipCode(zipCode) {
     try {
+        affichage.classList.add("hidden");
         const reponse = await fetch(
             `https://geo.api.gouv.fr/communes?codePostal=${zipCode}`
         );
@@ -43,7 +73,8 @@ async function searchByZipCode(zipCode) {
         affichage.appendChild(option);
 
         if (data.length > 0) {
-                data.forEach((commune) => {
+            affichage.classList.remove("hidden");
+            data.forEach((commune) => {
                 option = document.createElement("option");
                 option.value = commune.code;
                 option.textContent = commune.nom;
@@ -65,7 +96,6 @@ async function getWeatherInformations(comCode) {
             `https://api.meteo-concept.com/api/forecast/daily?token=9cf70dd6f5cf12e723541e9cc253916ca487e80dbfa8f276d3c7074221882677&insee=${comCode}`
         );
         const dataMeteo = await repMeteo.json();
-        console.table(dataMeteo);
         maVille.innerHTML = dataMeteo.city.name;
         const date = new Date(dataMeteo.forecast[0].datetime);
         duree.innerHTML = days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
@@ -102,14 +132,34 @@ async function getWeatherInformations(comCode) {
 
 // Call of the Weather API on click
 checkWeather.addEventListener("click", ()=> {
-    getWeatherInformations(affichage.value);
+    choosenCity = affichage.value;
+    getWeatherInformations(choosenCity);
     nextDaysContainer.innerHTML = '';
+    hideAndClearForm();
+    displayWeather();
+});
+
+// Return to the form when seeing weather
+changeWeather.addEventListener("click", ()=> {
+    hideWeather();
+    displayForm();
 });
 
 // Open the settings menu on click
 openMenu.addEventListener("click", ()=> {
     document.getElementById('formMenu').style.display = 'flex';
     document.getElementById('information').style.display = 'none';
+    weatherInformations.classList.add("hidden");
+});
+
+// Display the validation button only when a valid city is selected
+affichage.addEventListener("change", ()=> {
+    if(affichage.value != "") {
+        checkWeather.classList.remove("hidden");
+    }
+    else {
+        checkWeather.classList.add("hidden");
+    }
 });
 
 // Valid the settings on click
@@ -122,9 +172,10 @@ validFormMenu.addEventListener("click", ()=> {
 
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
+    weatherInformations.classList.remove("hidden");
 
 
-    getWeatherInformations(affichage.value);
+    getWeatherInformations(choosenCity);
     nextDaysContainer.innerHTML = '';
 });
 

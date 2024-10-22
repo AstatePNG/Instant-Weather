@@ -39,17 +39,8 @@ body {
     flex-direction: column;
 }
 
-
-#openMenu {
-    background-color: transparent;
-    margin-right: 5px;
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
+.hidden {
+    display: none;
 }
 
 #formMenu {
@@ -159,4 +150,8 @@ h1 {
 
 .hiddenInfo{
     display: none !important;
+}
+
+.input-form {
+    background-color: #32bb9f;
 }

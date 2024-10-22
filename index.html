@@ -14,26 +14,34 @@
 </head>
 
 <body>
-    <h1>Instant Weather</h1>
-    <div class="signature">
-        <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather">
-        <h2> by Roll For Weather</h2>
-        <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather">
+    <div class="card input-form" id="accueil">
+        <div class="card-body pb-5">
+            <h1>Instant Weather</h1>
+            <div class="signature mb-5">
+                <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather">
+                <h2> by Roll For Weather</h2>
+                <img class="rollForWeather" src="images/rollForWeather.png" alt="Logo Roll For Weather">
+            </div>
+        </div>
     </div>
     <div id="information">
-        <div class="container">
+        <div class="container p-2" id="firstInput">
             <label for="zipCode"> Entrez un code postal </label>
             <input name="zipCode" oninput="formInput()" type="text" id="zipCode" class="form-control" minlength="5"
                 maxlength="5">
-            <label for="affichage_communes">Liste des communes : </label>
-            <select id="affichage_communes" name="communes"></select>
-            <button type="button" class="btn btn-dark" id="checkWeather">Valider</button>
+            <label for="affichage_communes" class="hidden">Liste des communes : </label>
+            <select id="affichage_communes" name="communes" class="hidden"></select>
+            <br>
+            <button type="button" class="btn btn-dark hidden" id="checkWeather">Valider</button>
         </div>
-
+    </div>
+    
+    <div id="weatherInformations" class="hidden">
         <div class="buttonCard">
-            <button title="Click to display the additional options menu" type="button" id="openMenu"><i class="bi bi-gear-fill"></i></button>
+            <button title="Click to display the additional options menu" type="button" class="btn btn-dark" id="openMenu">
+                <i class="bi bi-gear-fill"></i>
+            </button>
         </div>
-        
         <div class="card text-center border-0" id="card">
             <div class="card-body">
                 <p class="card-text"><span id="maVille">MA VILLE</span></p>
@@ -68,6 +76,7 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-dark" id="changeWeather">Voir la météo d'une autre ville.</button>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3" id="nextDays">
     
