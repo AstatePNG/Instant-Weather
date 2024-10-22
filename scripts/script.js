@@ -122,6 +122,10 @@ validFormMenu.addEventListener("click", ()=> {
 
     document.getElementById('information').style.display = 'inline';
     document.getElementById('formMenu').style.display = 'none';
+
+
+    getWeatherInformations(affichage.value);
+    nextDaysContainer.innerHTML = '';
 });
 
 // Update the display above the slider to make it match the current value set
