@@ -58,7 +58,7 @@ async function searchByZipCode(zipCode) {
     }
 }
 
-// Call of the Weather API to get the informations
+// Call of the Weather API to get the informations weather information based on the zipCode.
 async function getWeatherInformations(comCode) {
     try {
         const repMeteo = await fetch(
@@ -138,6 +138,7 @@ slider.addEventListener("input", ()=> {
     }
 });
 
+//checks which items are checked to display the additional information the user wants to see
 function isChecked(elementId, infoElement, infoTextElement) {
     if (document.getElementById(elementId).checked == false) {
         document.getElementById(infoTextElement).classList.add("hiddenInfo");
@@ -176,6 +177,7 @@ function addDayCard(date, min, max, proba, sol, weather) {
     }
     minmax.innerHTML = min + '°C <span class="fleche"><span class="gauche">⬅</span><span class="droite">➡</span></span>' + max + "°C";
 
+    //Information on the card (for the next few days)
     meteoBody.appendChild(time);
     meteoBody.appendChild(probrain);
     meteoBody.appendChild(suntime);
@@ -194,7 +196,7 @@ function addDayCard(date, min, max, proba, sol, weather) {
     minmax.classList.add("card-text");
 }
 
-// change the displayed image after checking the weather informations
+// Changes the background image according to weather information
 function setVisualOfWeather(cardToUpdate, weather) {
     clearCardClasses(cardToUpdate);
     cardToUpdate.classList.add('card');
@@ -203,7 +205,7 @@ function setVisualOfWeather(cardToUpdate, weather) {
         (70 <= weather && weather <= 76) ||
         (210 <= weather && weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
     {
-        cardToUpdate.classList.add('card-rain');
+        cardToUpdate.classList.add('card-rain'); //To update the maps 
     } 
 
     else if(0 <= weather && weather <= 2){//The only codes where we consider it sunny
