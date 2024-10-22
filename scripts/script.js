@@ -128,7 +128,7 @@ slider.addEventListener("input", ()=> {
         sliderValueDisplay.innerHTML = "aujourd'hui";
     }
     else{
-        sliderValueDisplay.innerHTML = "pour les " + slider.value + " prochains jours";
+        sliderValueDisplay.innerHTML = "les " + slider.value + " prochains jours";
     }
 });
 
