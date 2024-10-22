@@ -1,7 +1,7 @@
 # Instant-Weather
 
 ## Description
-This is a project, done by HAMON Elsa, MEKHELEF Louisa and RAGOT Alexis, for classes during the year 2024-2025. The project implements a **web weather application**. It allows a user on a mobile or computer to search, using the postcode of his city, the forecast of the day, as well as the forecast for the next 7 days if desired.
+This is a project, done by [HAMON Elsa](https://github.com/AstatePNG), [MEKHELEF Louisa](https://github.com/LouMek) and [RAGOT Alexis](https://github.com/Asriel6), for classes during the year 2024-2025. The project implements a **web weather application**. It allows a user on a mobile or computer to search, using the postcode of his city, the forecast of the day, as well as the forecast for the next 7 days if desired.
 
 ## Functionalities 
 
@@ -27,8 +27,23 @@ This is a project, done by HAMON Elsa, MEKHELEF Louisa and RAGOT Alexis, for cla
 ![image](https://github.com/user-attachments/assets/032e79ae-764f-40af-8df0-314bdb247f6c)
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/2bf861b3-3598-4d7b-9ce6-91edbb7cdeb5)
-![image](https://github.com/user-attachments/assets/ad5969da-6795-4eab-9421-c7d1c20734d4)
+### Computer
+![image](https://github.com/user-attachments/assets/bbdbbd0b-230a-4f3c-ac72-75f233fecc58)
+![image](https://github.com/user-attachments/assets/5b71e5fe-97a1-42c3-8af4-458405ac3ccd)
+
+### Mobile
+![image](https://github.com/user-attachments/assets/f767903a-5bae-44da-9266-96938ad4dc61)  ![image](https://github.com/user-attachments/assets/c088dadf-f037-4c82-899f-8259a819e299)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
