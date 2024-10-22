@@ -88,6 +88,11 @@ async function getWeatherInformations(comCode) {
             dureeSoleil.innerHTML = hours + " heures";
         }
 
+
+
+        // BEGINNING OF THE DISPLAY FUNCTION (FOR MERGE INFORMATION)
+
+
         clearCardClasses();
         console.log(dataMeteo.forecast[0].weather);
         card.classList.add('card');
@@ -124,6 +129,10 @@ async function getWeatherInformations(comCode) {
         for(let i=1; i<7; i++){
             addDayCard(dataMeteo.forecast[i].datetime, dataMeteo.forecast[i].tmin, dataMeteo.forecast[i].tmax, dataMeteo.forecast[i].probarain, dataMeteo.forecast[i].sun_hours);
         }
+
+        // END OF THE DISPLAY FUNCTION (FOR THE MERGE)
+
+
     }
     catch (error) {
         console.error("Erreur requête API météo : ", error);

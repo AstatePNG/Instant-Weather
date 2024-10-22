@@ -104,7 +104,9 @@ h1 {
 }
 
 .card-body {
-    background-color: rgba(93, 217, 192, 0.60);
+    background-color: rgba(93, 217, 192, 0.75);
+    background-size: inherit;
+    border-radius: inherit;
 }
 
 .card {
@@ -115,9 +117,9 @@ h1 {
 }
 
 .card-snow { /*Needs to be even more to the left, contrast is not terrible*/
-    background-image: url("../images/Neige.png");
-    background-position: left;
-    background-size: contain;
+    background-image: url("../images/snow.gif");
+    background-position: top;
+    background-size: cover;
 }
 
 .card-cloud { /*Looks good*/
@@ -132,17 +134,21 @@ h1 {
 }
 
 .card-rain { /*Looks good*/
-    background-image: url("../images/Brouillard.png");
-    background-position: left;
+    background-image: url("../images/rain.gif");
+    background-position: top;
+    background-size: cover;
 }
 
 .card-sun { /*Pic Needs a bit of margin left, but how...*/
-    background-image: url("../images/sun2.gif");
-    background-position: left;
+    background-image: url("../images/sun.gif");
+    background-position: center;
+    background-size: cover;
 }
 
 .card-fog { /*Needs a new Pic*/
-    background-image: url("../images/Brouillard.png");
+    background-image: url("../images/fog.gif");
+    background-size: cover;
+    background-position: bottom;
 }
 
 #nextDays {
