@@ -103,7 +103,9 @@ h1 {
 }
 
 .card-body {
-    background-color: rgba(93, 217, 192, 0.60);
+    background-color: rgba(93, 217, 192, 0.75);
+    background-size: inherit;
+    border-radius: inherit;
 }
 
 .card {
@@ -113,28 +115,39 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.card-snow {
-    background-image: url("../images/Neige.png");
+.card-snow { /*Needs to be even more to the left, contrast is not terrible*/
+    background-image: url("../images/snow.gif");
+    background-position: top;
+    background-size: cover;
 }
 
-.card-cloud {
-    background-image: url("../images/Nuage.png");
+.card-cloud { /*Looks good*/
+    background-image: url("../images/cloud.gif");
+    background-size: cover;
 }
 
-.card-thunder {
-    background-image: url("../images/Orage.png");
+.card-thunder { /*Looks good*/
+    background-image: url("../images/thunder.gif");
+    background-repeat: repeat;
+    background-position: center;
 }
 
-.card-rain {
-    background-image: url("../images/Pluie.png");
+.card-rain { /*Looks good*/
+    background-image: url("../images/rain.gif");
+    background-position: top;
+    background-size: cover;
 }
 
-.card-sun {
-    background-image: url("../images/Soleil.png");
+.card-sun { /*Pic Needs a bit of margin left, but how...*/
+    background-image: url("../images/sun.gif");
+    background-position: center;
+    background-size: cover;
 }
 
-.card-fog {
-    background-image: url("../images/Brouillard.png");
+.card-fog { /*Needs a new Pic*/
+    background-image: url("../images/fog.gif");
+    background-size: cover;
+    background-position: bottom;
 }
 
 #nextDays {
