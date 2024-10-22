@@ -86,14 +86,11 @@ async function getWeatherInformations(comCode) {
         else{
             dureeSoleil.innerHTML = hours + " heures";
         }
-      
+    
         setVisualOfWeather(card, dataMeteo.forecast[0].weather);
         for(let i=1; i<slider.value; i++){
             addDayCard(dataMeteo.forecast[i].datetime, dataMeteo.forecast[i].tmin, dataMeteo.forecast[i].tmax, dataMeteo.forecast[i].probarain, dataMeteo.forecast[i].sun_hours, dataMeteo.forecast[i].weather);
         }
-
-        // END OF THE DISPLAY FUNCTION (FOR THE MERGE)
-
 
     }
     catch (error) {
@@ -185,7 +182,7 @@ function addDayCard(date, min, max, proba, sol, weather) {
     setVisualOfWeather(meteoDay, weather);
 
     inline.classList.add("col", "mb-4");
-    meteoDay.classList.add("card", "text-center");
+    meteoDay.classList.add("card", "text-center", "border-0");
     meteoBody.classList.add("card-body");
     time.classList.add("card-text");
     probrain.classList.add("card-text");
@@ -201,29 +198,29 @@ function setVisualOfWeather(cardToUpdate, weather) {
         (40 <= weather && weather <= 47) ||
         (210 <= weather && weather <= 212)) //Codes for rain (exlcuding those who mix snow and rain)
     {
-        card.classList.add('card-rain');
+        cardToUpdate.classList.add('card-rain');
     } 
 
     else if(0 <= weather && weather <= 2){//The only codes where we consider it sunny
-        card.classList.add('card-sun');
+        cardToUpdate.classList.add('card-sun');
     }
 
     else if(6 <= weather && weather <= 7){ // Codes for Fog
-        card.classList.add('card-fog');
+        cardToUpdate.classList.add('card-fog');
     } 
 
     else if(3 <= weather && weather <= 4){ //Codes for cloud
-        card.classList.add('card-cloud');
+        cardToUpdate.classList.add('card-cloud');
     } 
 
     else if((20 <= weather && weather <= 22) ||
             (30 <= weather && weather <= 32) ||
             (60 <= weather && weather <= 68)) //Codes for snow (exlcuding those who mix snow and rain)
     { 
-        card.classList.add('card-snow');
+        cardToUpdate.classList.add('card-snow');
     } 
 
     else if((100 <= weather && weather <= 142)){ //Codes for Thunder
-        card.classList.add('card-thunder');
+        cardToUpdate.classList.add('card-thunder');
     } 
 }
